@@ -1,0 +1,87 @@
+.app {
+  text-align: center;
+  padding: 20px;
+}
+
+.subtitle {
+  color: #aaa;
+}
+
+.canvas {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.node-wrapper {
+  text-align: center;
+}
+
+.node {
+  padding: 12px;
+  border-radius: 10px;
+  min-width: 140px;
+  color: white;
+}
+
+.node h3 {
+  margin: 6px 0;
+  cursor: pointer;
+}
+
+.node.action {
+  background: #2563eb;
+}
+
+.node.branch {
+  background: #ea580c;
+}
+
+.node.end {
+  background: #dc2626;
+}
+
+.btn-group {
+  margin-top: 6px;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+  padding: 6px 10px;
+  border-radius: 6px;
+  margin: 3px;
+}
+
+.delete {
+  background: black;
+  color: white;
+}
+
+.branch-wrapper {
+  display: flex;
+  gap: 50px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.branch-col {
+  text-align: center;
+}
+
+.branch-label {
+  font-weight: bold;
+}
+
+.branch-add {
+  background: #1d4ed8;
+  color: white;
+}
+
+.line {
+  width: 3px;
+  height: 30px;
+  background: white;
+  margin: 10px auto;
+}
+
