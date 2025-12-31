@@ -76,9 +76,9 @@ npm run dev
 Workflow-canvas
 │
 │── src/
-│   ├── components/    
-│   ├── workflow/      
-│   ├── assets/         
+│   ├── components\ 
+│   ├── workflow\     
+│   ├── assets \       
 │   ├── App.js\
 │   └── index.js\
 │\
