@@ -1,70 +1,103 @@
-# Getting Started with Create React App
+<!--
+🔥 WORKFLOW CANVAS README
+Stylish • Professional • Developer Friendly
+-->
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<p align="center">
+  <img src="https://img.icons8.com/?size=256&id=77782&format=png" width="110"/>
+</p>
 
-## Available Scripts
+<h1 align="center">Workflow Canvas 🚀</h1>
 
-In the project directory, you can run:
+<p align="center">
+  A modern, interactive, and highly intuitive Visual Workflow Builder — design, manage,
+  and visualize automation flows with drag-and-drop ease.
+</p>
 
-### `npm start`
+<p align="center">
+  <img src="https://img.shields.io/badge/Status-Active-success?style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/Framework-React-blue?style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/UI-Interactive-orange?style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/Version-1.0-green?style=for-the-badge"/>
+</p>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## ✨ Features
 
-### `npm test`
+✔️ Drag & Drop Workflow Nodes  
+✔️ Connect Nodes & Build Execution Paths  
+✔️ Create Conditional Branches (If / Else)  
+✔️ Visually Appealing Canvas UI  
+✔️ Smooth User Interactions  
+✔️ Scalable Workflow Architecture  
+✔️ Future Ready for API Execution Pipelines
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+## 📌 Use Case Examples
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+💼 Business Automation  
+⚙ Process Pipelines  
+📧 Email Automation Workflows  
+🤖 AI / Logic Execution Chains  
+🧪 Testing Conditional Sequences  
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+---
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## 🛠️ Tech Stack
 
-### `npm run eject`
+| Tech | Used For |
+|------|---------|
+| ⚛ React | Frontend UI |
+| 🎨 CSS / Tailwind / Custom UI | Styling |
+| 🧠 Context / State | Workflow State Management |
+| 🧩 Custom Components | Nodes + Canvas rendering |
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+---
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## 🚀 Getting Started
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### 1️⃣ Clone the Repository
+```bash
+git clone https://github.com/Rxshi2003/Workflow-canvas.git
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+ ### Install Dependencies
+ ```bash
+npm install
+```
+### Run the App
+```bash
+npm run dev
+```
+### 🧩 Project Structure
 
-## Learn More
+Workflow-canvas
+│
+│── src/
+│   ├── components/     # Canvas, Node, Sidebar etc.
+│   ├── workflow/       # Logic + state handlers
+│   ├── assets/         # Icons / Images
+│   ├── App.js
+│   └── index.js
+│
+│── public/
+│── package.json
+│── README.md
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### 🎯 Future Enhancements
+🔹 Export Workflow as JSON
+🔹 Save workflows to backend
+🔹 Multi-branch workflows
+🔹 Execution Simulation Mode
+🔹 Node Templates Library
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### 📸 Screenshot
+### Login Page ScreenShot
+<img width="1917" height="889" alt="image" src="https://github.com/user-attachments/assets/197ce520-eb96-43ee-936f-8aea429b034b" />
+### Landing after login 
 
-### Code Splitting
+<img width="1913" height="877" alt="image" src="https://github.com/user-attachments/assets/c123e3a5-d592-4da9-a014-c245f44eb103" />
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
