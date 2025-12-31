@@ -76,13 +76,13 @@ npm run dev
 Workflow-canvas
 │
 │── src/
-│   ├── components/    \ # Canvas, Node, Sidebar etc.
-│   ├── workflow/       \# Logic + state handlers
-│   ├── assets/         \# Icons / Images
+│   ├── components/    
+│   ├── workflow/      
+│   ├── assets/         
 │   ├── App.js\
 │   └── index.js\
 │\
-│── public/ \
+│── public \
 │── package.json \
 │── README.md \
 
