@@ -23,12 +23,23 @@ export default function App() {
     setAutoEditRoot(false);
   };
 
+  const deleteAll = () => {
+    if (!workflow) return;
+    if (window.confirm("Delete entire workflow? This cannot be undone.")) {
+      setWorkflow(null);
+    }
+  };
+
   return (
     <div className="app">
       <h1>Workflow Builder</h1>
-      <p className="subtitle">Add | Edit | Delete | Branching | Auto Connect</p>
 
       <div className="canvas">
+        {workflow && (
+          <div className="canvas-controls">
+            <button className="danger" onClick={deleteAll}>Delete All</button>
+          </div>
+        )}
         {!workflow ? (
           <div className="landing">
             <h2>Welcome</h2>

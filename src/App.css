@@ -15,31 +15,51 @@
 
 .node-wrapper {
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .node {
-  padding: 12px;
+  position: relative;
+  padding: 16px 20px;
   border-radius: 10px;
-  min-width: 140px;
+  min-width: 160px;
   color: white;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  text-align: left;
 }
 
-.node h3 {
-  margin: 6px 0;
+.node-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
   cursor: pointer;
 }
 
-.node.action {
-  background: #2563eb;
+.node-icon {
+  font-size: 18px;
 }
 
-.node.branch {
-  background: #ea580c;
+.node-label {
+  font-size: 15px;
+  font-weight: 600;
 }
 
-.node.end {
-  background: #dc2626;
+.node-condition {
+  margin-top: 6px;
+  font-size: 12px;
+  opacity: 0.95;
+  background: rgba(255,255,255,0.06);
+  padding: 6px 8px;
+  border-radius: 6px;
+  display: inline-block;
 }
+
+.node.action { background: linear-gradient(180deg,#3b82f6,#2563eb); }
+.node.branch { background: linear-gradient(180deg,#fb923c,#ea580c); }
+.node.end { background: linear-gradient(180deg,#f87171,#dc2626); }
 
 .btn-group {
   margin-top: 6px;
@@ -80,8 +100,107 @@ button {
 
 .line {
   width: 3px;
-  height: 30px;
-  background: white;
-  margin: 10px auto;
+  height: 36px;
+  background: rgba(255,255,255,0.85);
+  margin: 6px auto;
+  position: relative;
+}
+
+.line::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 100%;
+  width: 0;
+  height: 0;
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  border-top: 10px solid rgba(255,255,255,0.95);
+}
+
+/* connector dots on nodes */
+
+/* branch connector + splitter */
+.branch-connector {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 6px;
+}
+
+.branch-split {
+  width: 140px;
+  height: 2px;
+  background: rgba(255,255,255,0.9);
+  margin-top: 6px;
+  position: relative;
+}
+
+.branch-split::before,
+.branch-split::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  width: 2px;
+  height: 14px;
+  background: rgba(255,255,255,0.9);
+}
+
+.branch-split::before { left: 8px; }
+.branch-split::after { right: 8px; }
+
+/* branch layout tweaks */
+.branch-wrapper {
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+  margin-top: 24px;
+  align-items: flex-start;
+}
+
+.branch-col { position: relative; }
+
+/* Three-dot menu styles */
+.node-menu {
+  position: absolute;
+  right: 8px;
+  top: 8px;
+}
+
+.menu-btn {
+  background: transparent;
+  border: none;
+  color: rgba(255,255,255,0.9);
+  font-size: 18px;
+  cursor: pointer;
+  padding: 4px 6px;
+}
+
+.node .menu {
+  position: absolute;
+  right: 8px;
+  top: 32px;
+  background: rgba(0,0,0,0.65);
+  color: white;
+  border-radius: 6px;
+  padding: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  z-index: 50;
+}
+
+.node .menu button {
+  background: transparent;
+  color: white;
+  padding: 6px 8px;
+  text-align: left;
+}
+
+.menu-sep {
+  height: 1px;
+  background: rgba(255,255,255,0.15);
+  margin: 4px 0;
 }
 

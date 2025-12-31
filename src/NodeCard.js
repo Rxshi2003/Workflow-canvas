@@ -4,6 +4,7 @@ import { nanoid } from "nanoid";
 export default function NodeCard({ node, parent, updateRoot, autoEdit = false }) {
   const [editing, setEditing] = useState(false);
   const [tempLabel, setTempLabel] = useState(node.label);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
     if (autoEdit) setEditing(true);
@@ -72,31 +73,60 @@ export default function NodeCard({ node, parent, updateRoot, autoEdit = false })
     forceUpdate();
   };
 
+  const toggleMenu = (e) => {
+    e?.stopPropagation();
+    setMenuOpen(open => !open);
+  };
+
+  const closeMenu = () => setMenuOpen(false);
+
   return (
     <div className="node-wrapper">
       <div className={`node ${node.type}`}>
         {editing ? (
-          <input
-            value={tempLabel}
-            onChange={e => setTempLabel(e.target.value)}
-            onBlur={saveLabel}
-            autoFocus
-          />
+          <div className="edit-inline">
+            <input
+              value={tempLabel}
+              onChange={e => setTempLabel(e.target.value)}
+              onBlur={saveLabel}
+              autoFocus
+            />
+            <button className="save" onClick={saveLabel}>Save</button>
+          </div>
         ) : (
-          <h3 onDoubleClick={() => setEditing(true)}>{node.label}</h3>
-        )}
-
-        {parent && (
-          <button className="delete" onClick={deleteNode}>Delete</button>
-        )}
-
-        {node.type !== "end" && (
-          <div className="btn-group">
-            <button onClick={() => addNode("action")}>Add Action</button>
-            <button onClick={() => addNode("branch")}>Add Branch</button>
-            <button onClick={() => addNode("end")}>Add End</button>
+          <div className="node-title" onDoubleClick={() => setEditing(true)}>
+            <span className="node-icon">
+              {node.type === 'action' ? '📤' : node.type === 'branch' ? '❓' : '⏹️'}
+            </span>
+            <span className="node-label">{node.label || (node.type === 'action' ? 'Action' : node.type === 'branch' ? 'Condition' : 'End')}</span>
           </div>
         )}
+
+        {node.type === 'branch' && node.condition && (
+          <div className="node-condition">{node.condition}</div>
+        )}
+
+        {/* Three-dot menu button */}
+        <div className="node-menu">
+          <button className="menu-btn" onClick={toggleMenu}>⋯</button>
+          {menuOpen && (
+            <div className="menu" onClick={e => e.stopPropagation()}>
+              <button onClick={() => { setEditing(true); closeMenu(); }}>Edit</button>
+              {editing && <button onClick={() => { saveLabel(); closeMenu(); }}>Save</button>}
+              {parent && <button onClick={() => { deleteNode(); closeMenu(); }}>Delete</button>}
+              <div className="menu-sep" />
+              {node.type !== "end" && (
+                <>
+                  <button onClick={() => { addNode("action"); closeMenu(); }}>Add Action</button>
+                  <button onClick={() => { addNode("branch"); closeMenu(); }}>Add Branch</button>
+                  <button onClick={() => { addNode("end"); closeMenu(); }}>Add End</button>
+                </>
+              )}
+            </div>
+          )}
+        </div>
+
+        {/* Add controls moved to three-dot menu */}
       </div>
 
       {/* ⭐ Action Child */}
@@ -109,31 +139,34 @@ export default function NodeCard({ node, parent, updateRoot, autoEdit = false })
 
       {/* ⭐ Branch Children */}
       {node.type === "branch" && (
-        <div className="branch-wrapper">
-          {["true", "false"].map(key => (
-            <div className="branch-col" key={key}>
-              <p className="branch-label">{key.toUpperCase()}</p>
+        <>
+          <div className="branch-connector">
+            <div className="line" />
+            <div className="branch-split" />
+          </div>
+          <div className="branch-wrapper">
+            {["true", "false"].map(key => (
+              <div className="branch-col" key={key}>
+                <p className="branch-label">{key.toUpperCase()}</p>
 
-              {node.branches?.[key] ? (
-                <>
-                  <div className="line" />
+                {node.branches?.[key] ? (
                   <NodeCard
                     node={node.branches[key]}
                     parent={node}
                     updateRoot={updateRoot}
                   />
-                </>
-              ) : (
-                <button
-                  className="branch-add"
-                  onClick={() => addNode("action", key)}
-                >
-                  Add Step
-                </button>
-              )}
-            </div>
-          ))}
-        </div>
+                ) : (
+                  <button
+                    className="branch-add"
+                    onClick={() => addNode("action", key)}
+                  >
+                    Add Step
+                  </button>
+                )}
+              </div>
+            ))}
+          </div>
+        </>
       )}
     </div>
   );
