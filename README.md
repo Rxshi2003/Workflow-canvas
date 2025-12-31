@@ -76,15 +76,15 @@ npm run dev
 Workflow-canvas
 │
 │── src/
-│   ├── components/     # Canvas, Node, Sidebar etc.
-│   ├── workflow/       # Logic + state handlers
-│   ├── assets/         # Icons / Images
-│   ├── App.js
-│   └── index.js
-│
-│── public/
-│── package.json
-│── README.md
+│   ├── components/    \ # Canvas, Node, Sidebar etc.
+│   ├── workflow/       \# Logic + state handlers
+│   ├── assets/         \# Icons / Images
+│   ├── App.js\
+│   └── index.js\
+│\
+│── public/ \
+│── package.json \
+│── README.md \
 
 ### 🎯 Future Enhancements
 🔹 Export Workflow as JSON
