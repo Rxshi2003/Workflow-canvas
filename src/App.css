@@ -57,6 +57,17 @@
   display: inline-block;
 }
 
+.node.active-node {
+  box-shadow: 0 10px 30px rgba(59,130,246,0.28), 0 0 0 4px rgba(59,130,246,0.08) inset;
+  transform: translateY(-4px);
+  transition: transform 160ms ease, box-shadow 200ms ease;
+}
+
+.node:hover { transform: translateY(-2px); transition: transform 120ms ease; }
+
+.app-header { display:flex; align-items:center; justify-content:space-between; gap:12px; }
+.run-btn { background:#10b981; color:white; border-radius:8px; padding:6px 10px; border:none; cursor:pointer; }
+
 .node.action { background: linear-gradient(180deg,#3b82f6,#2563eb); }
 .node.branch { background: linear-gradient(180deg,#fb923c,#ea580c); }
 .node.end { background: linear-gradient(180deg,#f87171,#dc2626); }
